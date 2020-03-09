@@ -25,7 +25,7 @@ export default class AppointmentsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/appointments/')
+        axios.get(process.env.REACT_APP_API +'/appointments/')
             .then(response => {
                 this.setState({ appointments: response.data })
             })
@@ -35,7 +35,7 @@ export default class AppointmentsList extends Component {
     }
 
     deleteAppointment(id) {
-        axios.delete('http://localhost:5000/appointments/'+id)
+        axios.delete(process.env.REACT_APP_API +'/appointments/'+id)
             .then(response => { console.log(response.data)});
 
         this.setState({

@@ -24,7 +24,7 @@ export default class CreateAppointments extends Component {
     }
 
        componentDidMount() {
-         axios.get('http://localhost:5000/patients/')
+         axios.get(process.env.REACT_APP_API +'/patients/')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({

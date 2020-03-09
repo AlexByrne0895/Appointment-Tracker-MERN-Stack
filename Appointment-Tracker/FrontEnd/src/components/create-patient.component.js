@@ -29,7 +29,7 @@ export default class CreatePatients extends Component {
 
         console.log(patient);
 
-        axios.post('http://localhost:5000/patients/add', patient)
+        axios.post(process.env.REACT_APP_API +'/patients/add', patient)
           .then(res => console.log(res.data));
 
         this.setState({
