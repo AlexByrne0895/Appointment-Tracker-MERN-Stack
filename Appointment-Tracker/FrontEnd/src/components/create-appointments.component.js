@@ -72,7 +72,7 @@ export default class CreateAppointments extends Component {
 
         console.log(appointment);
 
-        axios.post('http://localhost:5000/appointments/add', appointment)
+        axios.post(process.env.REACT_APP_API +'/appointments/add', appointment)
           .then(res => console.log(res.data));
 
         window.location = '/';
